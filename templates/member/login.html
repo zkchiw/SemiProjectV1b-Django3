@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Web Project V1</title>
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/Webproject.css">
+    <style>
+        #main {height: 500px}
+        /* 로그인 폼 배치하기 */
+        form{border : 1px  ; width: 600px ;margin:150px auto}
+        form div {margin-top :12px}
+        form label {display : inline-block ;width:200px; text-align: right; font-weight: bold; }
+        form button:first-child { margin-left : 200px }
+
+
+    </style>
+</head>
+
+<body>
+<div id="wrap">
+    <header>
+        <h1>Python Web Project V1</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="join.html">회원가입</a></li>
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="board.html">게시판</a></li>
+                <li><a href="myinfo.html">회원정보</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+    <div id="main">
+        <h2>로그인</h2>
+        <form name="loginform" method="post" action="login.do" >
+            <div><label for="userid">아이디</label><input type="text" name="userid" id="userid" required></div>
+            <div><label for="passwd">비밀번호</label><input type="password" name="passwd" id="passwd" required></div>
+
+             <div>
+                <button type="submit">로그인</button>
+             </div>
+
+        </form>
+    </div>
+    <footer><hr>
+        <span>copyright &copy; 2022. smwdmsqha. All Right Reserved</span>
+    </footer>
+</div>
+</body>
+
+</html>
