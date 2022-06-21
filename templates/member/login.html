@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>Python Web Project V1</title>
-    <link rel="stylesheet" href="/static/css/normalize.css">
-    <link rel="stylesheet" href="/static/css/Webproject.css">
-    <style>
+{% extends 'layout/base.html' %}
+{% block title %}member/login {% endblock %}
+
+{% block style %}
         #main {height: 500px}
         /* 로그인 폼 배치하기 */
         form{border : 1px  ; width: 600px ;margin:150px auto}
@@ -13,25 +9,15 @@
         form label {display : inline-block ;width:200px; text-align: right; font-weight: bold; }
         form button:first-child { margin-left : 200px }
 
+        ul { list-style: none; padding: 0 }
+        ul li { display: inline-block;
+        margin-left: 155px }
 
-    </style>
-</head>
 
-<body>
-<div id="wrap">
-    <header>
-        <h1>Python Web Project V1</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="join.html">회원가입</a></li>
-                <li><a href="login.html">로그인</a></li>
-                <li><a href="board.html">게시판</a></li>
-                <li><a href="myinfo.html">회원정보</a></li>
-            </ul>
-        </nav>
-        <hr>
-    </header>
+{% endblock %}
+
+{% block content %}
+
     <div id="main">
         <h2>로그인</h2>
         <form name="loginform" method="post" action="login.do" >
@@ -44,10 +30,6 @@
 
         </form>
     </div>
-    <footer><hr>
-        <span>copyright &copy; 2022. smwdmsqha. All Right Reserved</span>
-    </footer>
-</div>
-</body>
+{% endblock %}
 
-</html>
+{% block jscript %}{% endblock %}

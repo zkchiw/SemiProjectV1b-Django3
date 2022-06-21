@@ -1,0 +1,35 @@
+{% extends 'layout/base.html' %}
+{% block title %}write{% endblock %}
+
+    {% block style %}
+        #main {height: auto}
+        #title {font-weight: bold}
+        div {width :200px; padding: 3px}
+        form {width: 60% ;margin:65px auto 10px}
+        form div {margin-top : 10px}
+        form label {display : inline-block ; text-align: right; font-weight: bold; margin-right:15px}
+        form label:nth-child(3) {vertical-align: top; margin-top: 5px}
+
+    {% endblock %}
+
+    {% block content %}
+        <h2>새 글 작성하기</h2>
+        <form name ="boardform" method="post">
+
+        <div><label>제목</label><input type="text" name="name" id="name"></div>
+        <div><label>작성자</label></div>
+        <div><label>본문</label></div>
+
+        <div>
+        <textarea name="bonmun" id="boardwrite" rows="20" cols="80" style="resize: none"></textarea>
+        </div><br>
+
+        <div id="button"><label></label>
+            <button type="submit">입력완료</button>
+            <button type="reset">다시입력</button>
+        </div>
+
+        </form>
+{% endblock %}
+
+{% block jscript %}{% endblock %}

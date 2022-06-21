@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>Python Web Project V1</title>
-    <link rel="stylesheet" href="/static/css/normalize.css">
-    <link rel="stylesheet" href="/static/css/Webproject.css">
-    <style>
+{% extends 'layout/base.html' %}
+{% block title %}member/myinfo {% endblock %}
+    {% block style %}
         #main {height: 500px}
         /* 로그인한 회원의 정보 테이블 배치 */
         table { text-align: left; width:400px; font-size : 20px; margin:auto;
@@ -13,23 +8,13 @@
         /* 회원 정보 각 행에 여백 주기 */
         th,td{padding :7px}
 
-    </style>
-</head>
-<body>
-<div id="wrap">
-    <header>
-        <h1>Python Web Project V1</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="join.html">회원가입</a></li>
-                <li><a href="login.html">로그인</a></li>
-                <li><a href="board.html">게시판</a></li>
-                <li><a href="myinfo.html">회원정보</a></li>
-            </ul>
-        </nav>
-        <hr>
-    </header>
+        ul { list-style: none; padding: 0 }
+        ul li { display: inline-block;
+        margin-left: 155px }
+
+
+    {% endblock %}
+{% block content %}
     <div id="main">
         <h2>회원정보</h2>
 
@@ -41,11 +26,6 @@
 
         </table>
     </div>
-    <footer><hr>
-        <span>copyright &copy; 2022. smwdmsqha. All Right Reserved</span>
-    </footer>
-</div>
-</body>
-</html>
+{% endblock %}
 
-
+{% block jscript %}{% endblock %}

@@ -1,9 +1,27 @@
 {% extends 'layout/base.html' %}
-{% block title %} semiprojectV1 {% endblock %}
-{% block contents %}
+{% block title %}index {% endblock %}
+
+{% block style %}
+        #main {height: 500px}
+        /* 링크관련 스타일시트 */
+        a{font-weight: bold}
+        a:link{text-decoration: none; color:black}
+        a:visited{text-decoration: none; color:black}
+        a:hover{text-decoration: underline; color: plum}
+        a:active{text-decoration: underline; color: plum}
+
+        ul { list-style: none; padding: 0 }
+        ul li { display: inline-block;
+        margin-left: 155px }
 
 
+        /* 저작권 문구 가운데 정렬 */
+        footer span {display: block; text-align: center}
 
-
-
+        /* 구분선 */
+        hr {background :black; height: 1px}
 {% endblock %}
+
+{% block content %}main{% endblock %}
+
+{% block jscript %}{% endblock %}
