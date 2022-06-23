@@ -29,7 +29,7 @@ def join(request):
                 userid = form['userid'],
                 passwd = make_password(form['passwd']), #make_password로 비밀번호 암호화
                 name = form['name'],
-                eamil = form['email']
+                email = form['email']
             )
             # Member 객체에 담음 회원정보를 member테이블에 저장
             member.save()
