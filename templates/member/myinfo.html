@@ -21,15 +21,23 @@
 
 
     {% endblock %}
-{% block content %}
+    {% block content %}
+
+    {# 만약 로그인되어있지 않으면 회원정보 페이지 대신 로그인 페이지를 출력#}
+    {% if not request.session.userid %}
+    <script>
+        alert('로그인해주세요')
+        location.href='/login'
+    </script>
+    {% endif %}
     <div id="main">
         <h2>회원정보</h2>
 
         <table>
-        <tr><th>아이디</th><td>smwdmsqha</td></tr>
-        <tr><th>이름</th><td>Justin Breaker</td></tr>
-        <tr><th>이메일</th><td>smwdmsqha@gmail.com</td></tr>
-        <tr><th>가입일</th><td>2022-03-02 12:05:11</td></tr>
+        <tr><th>아이디</th><td>{{ member.userid }}</td></tr>
+        <tr><th>이름</th><td>{{ member.name }}</td></tr>
+        <tr><th>이메일</th><td>{{ member.email }}</td></tr>
+        <tr><th>가입일</th><td>{{member.regdate}}</td></tr>
 
         </table>
     </div>
