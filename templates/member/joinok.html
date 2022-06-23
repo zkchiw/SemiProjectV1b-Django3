@@ -1,0 +1,33 @@
+{% extends 'layout/base.html' %}
+{% block title %}member/join {% endblock %}
+    {% block style %}
+        #main {height: 500px}
+        form{/*border : 1px solid red;*/ width: 500px ;margin:150px auto }
+
+        ul { list-style: none; padding: 0 }
+        ul li { display: inline-block;
+        margin-left: 155px }
+
+        /* 회원가입 폼요소에 여백 주기 */
+        form div {margin-top :12px}
+        /* 회원가입 폼 라벨에 너비 설정 */
+        /* display 인라인요소를 블록요소로 변경 */
+        form label {display : inline-block ;width: 120px; text-align: right; font-weight: bold}
+        /* 회원가입 폼 버튼 위치 설정 */
+        form button:first-child { margin-left : 122px }
+    {% endblock %}
+
+    {% block content %}
+            <h2>회원가입 완료</h2>
+            <h3>아이디 : {{ form.userid }}</h3>
+            <h3>이름 : {{ form.name }}</h3>
+            <h3>이메일 : {{ form.email }}</h3>
+        <hr>
+
+        <div><a href="/login">로그인하기</a></div>
+
+  {% endblock %}
+
+{% block jscript %}
+
+{% endblock %}
