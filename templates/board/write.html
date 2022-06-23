@@ -2,13 +2,17 @@
 {% block title %}write{% endblock %}
 
     {% block style %}
-        #main {height: auto}
-        #title {font-weight: bold}
-        div {width :200px; padding: 3px}
-        form {width: 60% ;margin:65px auto 10px}
-        form div {margin-top : 10px}
-        form label {display : inline-block ; text-align: right; font-weight: bold; margin-right:15px}
-        form label:nth-child(3) {vertical-align: top; margin-top: 5px}
+
+        a{font-weight: bold}
+        a:link{text-decoration: none; color:black}
+        a:visited{text-decoration: none; color:black}
+        a:hover{text-decoration: underline; color: plum}
+        a:active{text-decoration: underline; color: plum}
+        hr {background :black; height: 1px}
+
+        ul { list-style: none; padding: 0 }
+        ul li { display: inline-block;
+        margin-left: 155px }
 
     {% endblock %}
 
