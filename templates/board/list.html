@@ -36,19 +36,21 @@
 
 {% block content %}
     <h2>게시판</h2>
-
         <table id="board">
+
             <tr><td colspan="5" class="btns"><button type="button" onclick="location.href='/write'">새글쓰기</button></td></tr>
             <tr><td>번호</td><td>제목</td><td>작성자</td><td>작성일</td><td>조회</td></tr>
-            <tr><td>1</td><td><a href='/view'>Hello, World!!</a></td><td>smwdmsdqha</td><td>2022-05-27</td><td>123</td></tr>
-            <tr><td>2</td><td>Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!</td><td>smwdmsdqha</td><td>2022-05-27</td><td>123</td></tr>
-            <tr><td>3</td><td>Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!</td><td>smwdmsdqha</td><td>2022-05-27</td><td>123</td></tr>
-            <tr><td>4</td><td>Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!</td><td>smwdmsdqha</td><td>2022-05-27</td><td>123</td></tr>
-            <tr><td>5</td><td>Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!</td><td>smwdmsdqha</td><td>2022-05-27</td><td>123</td></tr>
-            <tr><td>6</td><td>Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!</td><td>smwdmsdqha</td><td>2022-05-27</td><td>123</td></tr>
-            <tr><td>7</td><td>Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!</td><td>smwdmsdqha</td><td>2022-05-27</td><td>123</td></tr>
-            <tr><td>8</td><td>Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!</td><td>smwdmsdqha</td><td>2022-05-27</td><td>123</td></tr>
-            <tr><td>9</td><td>Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!</td><td>smwdmsdqha</td><td>2022-05-27</td><td>123</td></tr>
+
+        {% for b in bds%}
+            <tr>
+                <td>{{ b.id }}</td>
+                <td><a href='/view?bno={{ b.id }}'{{ 1 }}>{{ b.title }}</a></td>
+                <td>{{ b.userid }}</td>
+                <td>{{ b.regdate|date:'Y-m-d' }}</td>
+                <td>{{ b.views }}</td
+                ></tr>
+        {% endfor %}
+
         </table>
 
         <ul id="pgnav">

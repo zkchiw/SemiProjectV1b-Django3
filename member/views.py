@@ -66,6 +66,10 @@ def login(request):
             if member and check_password(form['passwd'],member.passwd):
                 # 아이디와 비밀번호 인증을 정상적으로 마쳤다면 세션 변수에 인증정보를 저장해둠
                 request.session['userid'] = form['userid']
+                # 로그인한 사용자의 id도 조회해서 세션변수에 저장해둠
+                id = Member.objects.all().filter(userid=form['userid']).values_list('id')[0][0]
+                request.session['userid_id']=id
+                print(id)
 
                 return redirect('/') # index 페이지로 이동
             else :
