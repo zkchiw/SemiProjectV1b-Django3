@@ -1,0 +1,90 @@
+{% extends 'layout/base.html' %}
+{% block title %}index {% endblock %}
+
+{% block style %}
+        #main {height: 500px}
+        /* 링크관련 스타일시트 */
+        a{font-weight: bold}
+        a:link{text-decoration: none; color:black}
+        a:visited{text-decoration: none; color:black}
+        a:hover{text-decoration: underline; color: plum}
+        a:active{text-decoration: underline; color: plum}
+
+        ul { list-style: none; padding: 0 }
+        ul li { display: inline-block;
+        margin-left: 155px }
+
+        table {width: 60% ;margin :65px auto -10px;}
+        table tr {padding :10px}
+        th:first-child {width: 15%}
+        tr:nth-child(4) th {vertical-align : top}
+        tr:nth-child(4) td {border : 1px solid orange; height:300px; vertical-align: top}
+        tr:nth-child(4) div {height: 300px; overflow:auto }
+
+        #bonmun {border : 1px solid orange; width : 70% ; height: 300px; overflow:auto}
+
+        /* 저작권 문구 가운데 정렬 */
+        footer span {display: block; text-align: center}
+
+        /* 구분선 */
+        hr {background :black; height: 1px}
+{% endblock %}
+
+{% block content %}    <div id="main">
+        <h2>게시판 본문글</h2>
+
+        <span>제목</span><span>Hello, World!!</span><br>
+        <span>작성자</span> <span>smwdmsqha</span><br>
+        <span>작성일</span> <span>2022-05-27 11:44:09</span><br>
+        <span>본문 </span><span>Hello, World!!Hello, World!!Hello, World!!Hello, World!!Hello, World!!</span><br>
+
+        <p id="bonmun">Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
+        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!</p>
+
+        <tr><td colspan="2">
+            <button type="button" onclick="location.href='/list'">목록으로 이동</button>
+            <button type="button"><a href="/write">새글쓰기</a></button>
+            <button type="button">수정하기</button>
+            <button type="button">삭제하기</button></tr>
+
+        <hr>
+
+        <tr><td>제목</td></tr>
+        <tr><td>Hello, World!!</td></tr>
+        <tr><td>작성자</td></tr>
+        <tr><td>smwdmsqha</td></tr>
+        <tr><td>작성일</td></tr>
+        <tr><td>2022-05-27 11:44:09</td></tr>
+        <tr><td>본문</td></tr>
+        <tr><td>
+
+        </td></tr>
+
+    </div>
+    <footer><hr>
+        <span>copyright &copy; 2022. smwdmsqha. All Right Reserved</span>
+    </footer>{% endblock %}
+
+{% block jscript %}{% endblock %}
