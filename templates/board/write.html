@@ -25,7 +25,7 @@
         <input type="text" name="title" id="title"></div>
 
     <div><label for="title">작성자</label>
-        <span>abc123</span></div>
+        <span>{{userid}}</span></div>
 
     <div><label for="contents" class="dragup">본문</label>
         <textarea name="contents" id="contents"
@@ -37,7 +37,7 @@
             <button type="reset">다시입력</button>
     </div>
 
-    <input type="hidden" name="userid"
+    <input type="hidden" name="memberid"
            value="{{ request.session.userid_id }}">
     </form>
 {% endblock %}

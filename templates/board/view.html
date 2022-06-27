@@ -33,58 +33,55 @@
 {% block content %}    <div id="main">
         <h2>게시판 본문글</h2>
 
-        <span>제목</span><span>Hello, World!!</span><br>
-        <span>작성자</span> <span>smwdmsqha</span><br>
-        <span>작성일</span> <span>2022-05-27 11:44:09</span><br>
-        <span>본문 </span><span>Hello, World!!Hello, World!!Hello, World!!Hello, World!!Hello, World!!</span><br>
-
-        <p id="bonmun">Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!
-        Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!! Hello, World!!</p>
+        <span>제목</span><span>{{bd.title}}</span><br>
+        <span>작성자</span><span>{{bd.member.userid}}</span><br>
+        <span>작성일</span><span>{{bd.regdate|date:'Y-m-d H:i:s'}}</span><br>
+        <span>조회수</span><span>{{bd.views}}</span><br>
+        <span>본문 </span><div class="box">{{ bd.contents }}</div><br>
 
         <tr><td colspan="2">
             <button type="button" onclick="location.href='/list'">목록으로 이동</button>
             <button type="button"><a href="/write">새글쓰기</a></button>
-            <button type="button">수정하기</button>
-            <button type="button">삭제하기</button></tr>
+            <button type="button" id="mdfbtn">수정하기</button>
+            <button type="button" id="rmvbtn">삭제하기</button></tr>
 
         <hr>
 
-        <tr><td>제목</td></tr>
-        <tr><td>Hello, World!!</td></tr>
-        <tr><td>작성자</td></tr>
-        <tr><td>smwdmsqha</td></tr>
-        <tr><td>작성일</td></tr>
-        <tr><td>2022-05-27 11:44:09</td></tr>
-        <tr><td>본문</td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
         <tr><td>
-
         </td></tr>
+
+        <form name ='board'><input type="hidden" name ='bno' value = {{ bd.id }}></form>
 
     </div>
     <footer><hr>
         <span>copyright &copy; 2022. smwdmsqha. All Right Reserved</span>
     </footer>{% endblock %}
 
-{% block jscript %}{% endblock %}
+{% block jscript %}
+    <script>
+
+        const contents = document.querySelector('.box')
+        contents.setAttribute('style', 'white-space: pre')
+        const bno = document.board.bno.value
+
+        const mdfbtn = document.querySelector('#mdfbtn')
+        mdfbtn.addEventListener('click', ()=>{
+            if (confirm('정말로 수정하시겠습니까?'))
+            location.href='/modify?bno='+bno})
+
+        const rmvbtn = document.querySelector('#rmvbtn')
+        rmvbtn.addEventListener('click',()=>{
+            if (confirm('정말로 삭제하시겠습니까?')){
+                location.href='/remove?bno='+bno }})
+
+
+    </script>
+
+{% endblock %}
